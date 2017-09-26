@@ -1,0 +1,75 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[truedimen,margin=25truemm]{geometry}
+\usepackage{amsmath}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{amssymb}
+
+\begin{document}
+  \paragraph{例}
+     \subparagraph{(3)}
+      $\mathbf{R}$の閉区間$\lbrack a, b \rbrack$上で定義された実数値連続関数全体の集合 \\
+      $C\lbrack a, b \rbrack$において、可算とスカラー倍演算を
+      \begin{itemize}
+        \item $(f + g) (x) = f( x) + g (x)$
+        \item $(cf) (x) = c f (x)$
+      \end{itemize}
+      と定めると、$C\lbrack a, b \rbrack$はこれらの演算に関して線形空間をなす \\
+      可算が結合則を満たすことは次のようにして確かめられる \\
+      任意の$f, g, h \in C \lbrack a, b \rbrack$と$x \in \lbrack a, b \rbrack$に対して \\
+      \begin{math}
+        \big( (f + g) + h \big) (x) = (f + g) (x) + h(x) \\
+        =  \big(f(x) + g(x) \big) + h(x) \\
+        = f(x) + \big(g(x) + h(x)\big) \\
+        = f(x) + (g + h) (x) \\
+      = \big(f+ (g + h) \big) (x) \end{math}
+
+      よって$(f+ g) + h = f + (g + h)$
+      \setcounter{section}{3}
+      \subsection{ノルム空間}
+        \paragraph{定義 3.1}
+        \begin{itemize}
+          \item $X$: 実線形空間
+          \item $\parallel \bullet \parallel : X \rightarrow \mathbf{R}$
+        \end{itemize}
+
+        このとき$\parallel \bullet \parallel$が$X$上のノルム \\
+        $\Leftrightarrow$ 任意の$x, y \in X, a \in \mathbf{R}$に対して \\
+        \begin{itemize}
+          \item[(a)] $\parallel x \parallel \geq 0$かつ$\parallel x \parallel = 0 \Leftrightarrow x = 0$ (非負性)
+          \item[(b)] $\parallel x + y \parallel \leq \parallel x \parallel + \parallel y \parallel$ (三角不等式)
+          \item[(c)] $\parallel \alpha x \parallel = \mid\alpha\mid \parallel x \parallel$ (同次性)
+        \end{itemize}
+
+        また、ノルムが定義された実線形空間を{\bf ノルム空間}という
+        \subparagraph{注} 
+      「$X$はノルム空間」と言ったり、どのノルムを考えるのか明示したいときは「$(X, \parallel \bullet \parallel)$はノルム空間」と言ったりする
+
+        \subparagraph{例}
+          \begin{itemize}
+            \item[(1)] $\parallel \bullet \parallel_2 : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_2 = \sqrt{x_1^2 + \cdots + x_N^2}$
+              (ただし$\mathbf{x} = \begin{pmatrix} x_1 \\ \vdots \\ x_N \end{pmatrix})$と定めると
+              $\parallel \bullet \parallel_2$は$\mathbf{R}^N$上のノルム
+            \item[(2)] $\parallel \bullet \parallel_1 : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_1 = \mid x_1 \mid + \cdots  \mid x_N \mid$と定めると
+              $\parallel \bullet \parallel_1$は$\mathbf{R}^N$上のノルム
+            \item[(3)] $\parallel \bullet \parallel_\infty : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_\infty = \max_{1 \leq i \leq N} \mid x_i \mid $と定めると
+              $\parallel \bullet \parallel_\infty$は$\mathbf{R}^N$上のノルム
+            \item[(4)] $1 \leq p$とする。\\ $\parallel\bullet\parallel_p : \mathbf{R}^N \rightarrow \mathbf{R}$を \\
+            $\parallel \mathbf{x} \parallel_p = {\big( \mid x_1\mid^p + \cdots + \mid x_N \mid^p \big)}^\frac1p$と定めると \\
+              $\parallel\bullet\parallel_p$は$\mathbf{R}^N$上のノルム
+          \end{itemize}
+
+        \paragraph{注}
+          ノルム空間$(X, \parallel\bullet\parallel)$に対して、$d: X^2 \rightarrow \mathbf{R}$を$d(x, y) = \parallel x - y \parallel$と定めると$d$は$X$上の距離関数
+
+        \paragraph{証明 cf.p16}
+          $x, y, z \in X$を任意に取る。
+          \begin{itemize}
+            \item[$(D_1)$] $d(x, y) = \parallel x - y\parallel \geq 0$ (ノルムの非負性より) \\
+              $d(x, y) = 0 \Leftrightarrow \parallel x -y \parallel = 0 \Leftrightarrow x - y = 0$ (ノルムの非負性より)
+            \item[$(D_2)$]  $d(y, x) = \parallel y - x \parallel = \parallel - (x - y) \parallel = \parallel (-1) (x -y) \parallel = \mid -1 \mid \parallel x - y \parallel = d(x, y)$
+            \item[$(D_3)$] $d(x, z) + d(z, y) = \parallel x - z \parallel + \parallel z - y \parallel \geq \parallel (x - z) + (z - y) \parallel = \parallel x - y \parallel = d(x, y)$
+          \end{itemize}
+
+        
+\end{document}
+
