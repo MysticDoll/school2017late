@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[truedimen,margin=25truemm]{geometry}
+\usepackage{amsmath}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{amssymb}
+
+\begin{document}
+\section*{2章 終結式}
+\subsection*{定義2.1}
+  \[f(X) = a_0 X^m + a_1 X^{m-1} + \cdots + a_m \ a_0 \neq 0 \\
+  g(X) = b_0 X^n + b_1 X^{n-1} + \cdots b_n \ (b_0 \neq 0) \\
+    \in  K\lbrack X \rbrack \text{に対して}\]
+
+  \[ \begin{pmatrix}
+      a_0 & \cdots & 0 & b_0 & \cdots & 0 \\
+      \vdots & \ddots & \vdots &  \vdots & \ddots & \vdots \\
+      0 & 0 & a_0 & 0 & 0 & b_0 \\
+      a_m & 0 & 0 & b_n & 0 & 0 \\
+      0 & \ddots & \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & a_m & 0 & 0 & b_n \\
+  \end{pmatrix} \]
+
+  を$f \times g$のシルベスター行列と呼び、その行列式を$f$と$g$の終結式 (resultant)とよび、$R(f,g)$で表す
+
+  \paragraph{証明}
+    $f(X)$と$g(X)$が共通因子を持つ$\Leftrightarrow$ \\
+  ${}^\exists h(X), t(X) \in K \lbrack X \rbrack  \\
+    \deg h < \deg g \\
+    \deg t < \deg f \\
+  f(X) h(X) = g(X) t(X) \\
+  \Leftrightarrow \\
+  {}^\exists h(X) = C_0 X^{n-1} + \cdots + C_{n-1} \neq 0 \\
+  t(X) = d_0 X^{m-1} + \cdots + d_{m-1} \neq 0 \\
+  f(X) h(X) = g(X) t(X) \\
+  \Leftrightarrow \\
+  {}^\exists (C_0, \ldots , C_{n-1}, d_0, \ldots ,d_{m-1} ) \neq \vec{0}$
+  共通因子を$s(X)$とすると \\
+  \[ \begin{array}{lc}
+    a_0 C_0 = b_0 d_0 & X^{m+n-1} \text{の係数} \\
+    a_1 C_0 + a_0 C_1 = b_1 d_0 & X^{m+n-2} \text{の係数} \\
+    a_2 C_0 + a_1 C_1 + a_0 C_2 = b_2 d_0 + b_1 d_1 + b_0 d_2 & X^{m+n-3} \text{の係数} \\
+    \vdots & \vdots \\
+    a_m C_{n-1} + a_{m-1}C_{n-1} = b_n d_{m-2} + b_{n-1} d_{m1} & X \text{の係数}\\
+    a_m C_{n-1} = b_n d_{m-1} & X^0 \text{の係数}
+\end{array} \]
+\subsection*{定理 2.2}
+  $R (f,g) \in \langle f(X), g(X) \rangle$ \\
+  実は$R (f, g) = h(X) f(X) + t(X) g(X)$
+  $h(X), t(X)$の係数は$a_0, \ldots , a_m, b_0 , \ldots , b_n$の整式 (整数係数多項式)
+  \paragraph{証明}
+    $R(f, g) = 0$なら$h(X) = t(X) = 0$とおけばよい\\
+    $R(f, g) \neq 0$とする。 \\
+  \[ \begin{pmatrix}
+      a_0 & \cdots & 0 & b_0 & \cdots & 0 \\
+      \vdots & \ddots & \vdots &  \vdots & \ddots & \vdots \\
+      0 & 0 & a_0 & 0 & 0 & b_0 \\
+      a_m & 0 & 0 & b_n & 0 & 0 \\
+      0 & \ddots & \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & a_m & 0 & 0 & b_n \\
+  \end{pmatrix}  
+  \begin{pmatrix}
+    C_0 \\ \vdots \\ C_{n-1} \\ d_0 \\ \vdots \\ d_{n-1}
+  \end{pmatrix} = 
+  \begin{pmatrix}
+    0 \\ \vdots \\ 0 \\ 1
+  \end{pmatrix}\]
+  の解$(C_0, \ldots , C_{n-1}, d_0, \ldots , d_{m-1})$に対し、\\
+  $h^\prime (X) = C_0 X^{n-1} + \cdots + C_{n-1}, t^\prime (X) = d_0 X^{m-1} + \cdots + d_{m-1}$とおくと \\
+  $h^\prime (X) f(X) + t^\prime(X) g(X) = 1$がなりたつことにほかならない \\
+  $R(f, g) \neq 0$なので、解はただひとつ存在して、それはClamerの公式によって \\
+  $C_i = \frac1{R(f,g)}$\\
+  よって、各$C_j, d_j$に$R(f,g)$をかけたものは、$a_0, \ldots , a_m , b_0 \ldots , b_n$の整式になる \\
+
+  よって$ \begin{array}{l}h(X) = h^\prime (X) R(f, g) \\ t(X) = t^\prime (X) R(,f, g) \end{array}$とおけばよい
+
+\end{document}
