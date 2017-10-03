@@ -70,6 +70,59 @@
             \item[$(D_3)$] $d(x, z) + d(z, y) = \parallel x - z \parallel + \parallel z - y \parallel \geq \parallel (x - z) + (z - y) \parallel = \parallel x - y \parallel = d(x, y)$
           \end{itemize}
 
-        
-\end{document}
+        \paragraph{注}
+          $X$が実線形空間をなし、$d$が$X$上の距離であるとき
+          $\parallel \bullet \parallel : X \rightarrow \mathbf{R}$を
+          \[\parallel \mathbf{x} \parallel = d(\mathbf{x}, \mathbf{0}) \]
+          と定義する。
 
+          このとき、$d$が次の条件を満たすならば
+          $\parallel \bullet \parallel$は$X$上のノルムになる \\
+          任意の$x, y, z \in X$と$\alpha \in \mathbf{R}$に対して
+          \begin{enumerate}
+            \item 
+          \end{enumerate}
+
+      \paragraph{性質 3.1}
+        $(X, \parallel \bullet \parallel)$: ノルム空間 \\
+        任意の$x,y \in X$に対して
+        \[ \mid \parallel x \parallel - \parallel y \parallel \mid \leq \parallel x - y\parallel \]
+      \subparagraph{証明}
+        \[ \parallel x \parallel = \parallel x - y + y \parallel \leq \parallel x - y \parallel + \parallel y \parallel \]
+        よって$\parallel x \parallel - \parallel y \parallel \leq \parallel x - y \parallel$\\
+        \[\parallel y \parallel = \parallel y - x + x \parallel \leq \parallel y - x \parallel + \parallel x \parallel \]
+        よって$\parallel y \parallel - \parallel x \parallel \leq \parallel y - x \parallel$
+
+      \paragraph{定義 3.2 \\}
+        \noindent$X$: ノルム空間 \\
+        ${(x_n)}_{n=1}^\infty$: $X$の点列 \\
+        $x \in X$ \\
+        このとき、${(x_n)}_{n=1}^\infty$が収束$\Leftrightarrow \parallel x_n - x \parallel \rightarrow 0 \ (n \rightarrow 0)$
+
+      \paragraph{定義 3.3 (写像の連続)}
+        (cf.\ 定義2.8 p39)
+      \paragraph{注意1}
+        ノルムは連続\\
+        \raise0.2ex\hbox{\textcircled{\scriptsize{$\because$}}}
+        $X$の点列${(x_n)}_{n=1}^\infty$と$x \in X$について$x_n \rightarrow x \ (x \rightarrow \infty)$であるとき、
+        \[ 0 \leq \mid \parallel x_n \parallel - \parallel x \parallel \mid \leq \parallel x_n -  x\parallel \rightarrow 0 \ (n \rightarrow \infty) \]
+      \paragraph{定義 3.4 \\}
+        $X$: 実線形空間 \\
+        $\parallel \bullet \parallel_a, \parallel \bullet \parallel_b$ $X$上のノルム 
+
+        $\parallel \bullet \parallel_a$と$\parallel\bullet\parallel_b$が等価 \\
+        $\Leftrightarrow$ 任意の$x \in X$にs対して、
+        \[ M_1 \parallel x \parallel_a \leq \parallel x \parallel_b \leq M_2 \parallel x \parallel_a \]
+        をみたす$M_1, M_2 > 0$が存在
+      \paragraph{注意2}
+        (a) (b) ノルムが等価であるという関係は同値関係: \\
+        $X$上の任意の$\parallel\bullet\parallel_a, \parallel\bullet\parallel_b, \parallel\bullet\parallel_c$に対して、
+        \begin{itemize}
+          \item[反射律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$は等価
+          \item[対象律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価 $\Leftrightarrow$ $\parallel\bullet\parallel_b$と$\parallel\bullet\parallel_a$は等価
+          \item[推移律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価かつ$\parallel\bullet\parallel_b$と$\parallel\bullet\parallel_c$が等価 $\Rightarrow$ $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_c$は等価
+        \end{itemize}
+        (c) 点列$x_n \in X$と$x \in X$に対して$X$上のノルム$\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価ならば\\
+        ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_b$の意味で$x$に収束することは
+        ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_a$の意味で$x$に収束することと同値である。
+\end{document}
