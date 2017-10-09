@@ -73,4 +73,68 @@
 
   よって$ \begin{array}{l}h(X) = h^\prime (X) R(f, g) \\ t(X) = t^\prime (X) R(,f, g) \end{array}$とおけばよい
 
+\subsection*{定理 2.3 (拡張定理)}
+  \begin{itemize}
+    \item $K$ : 代数的閉体
+    \item $ I \subset{} K \lbrack{} X_1, \ldots, X_n \rbrack{} $ : イデアル
+  \end{itemize}
+  \[ \mathbf{V}_k (I \cap K \lbrack X_1, \ldots, X_{n-1} \rbrack ) \ni ( C_1, \ldots , C_{n-1} )  \\
+  t_0 (C_1, \ldots , C_{n-1} )\neq 0 \Rightarrow {}^\exists C_n \in K (C_1, \ldots , C_N) \in \mathbf{V}_k (I) \]
+
+  \subsubsection*{例}
+    $K = \mathbf{C} \ X = X_1, Y = X_2, Z = X_3 \\
+      I = \langle ZX -1, X-Y \rangle \subset \mathbf C \lbrack X, Y, Z \rbrack \\
+      I \cap \mathbf C \lbrack Y, Z \rbrack = \langle X - Y \rangle \\
+    (C_1, C_2) \in \mathbf{V}_\mathbf{C} (I \cup \mathbf{C} \lbrack Y, Z \rbrack) = \mathbf{V}_\mathbf{C} (\langle X - Y \rangle) = \lbrace (c, c) \mid \in \mathbf{C} \rbrace $
+
+    \paragraph{証明}
+      $I ( C_1, \ldots , C_{n-1})  = \lbrace f(C_1, \ldots, C_{n-1}, X_n) \in K \lbrack X_n \rbrack \mid f \in I \rbrace$とおく \\
+      明らかにこれは$K \lbrack X_n \rbrack$のイデアル 
+      ($I$ がイデアル $\Leftrightarrow $
+        \begin{enumerate}
+          \item $I \neq \emptyset$
+          \item $I \ni p, q \Rightarrow p + q \in I$
+          \item $I \ni p \Rightarrow{} {}^\forall h \in K\lbrack X_1, \ldots, X_n \rbrack hp \in I$
+        \end{enumerate})
+
+      \subparagraph{ケース1 \\}
+        $I(C_1, \ldots, C_{n-1}) = \langle 0 \rangle$ $C_n$は任意にとれる
+      \subparagraph{ケース2 \\}
+        $I(C_1, \ldots, C_{n-1}) = \langle f(C_1, \ldots, C_{n-1}, X_n) \rangle$
+        $\deg f(C_1, \ldots, C_{n-1}, X_n) \geq 1 $ \\
+        $K$は代数的閉体なので ${}^\exists C_n \in K \ f(C_1, \ldots, C_{n-1} , C_n) = 0$
+      \subparagraph{ケース3 \\}
+        $I(C_1, \ldots, C_{n-1}) = \langle f(C_1, \ldots, C_{n-1}, X_n) \rangle = \langle 1 \rangle$ \\
+        $f(C_1, \ldots, C_{n-1}, X_n) = a$は$0$でない定数
+
+        \[ f = S_0 (X_1, \ldots, X_{n-1} ) X_n^M + S_1(X_1, \ldots, X_{n-1})X_n^{M-1} + \cdots + S_M (X_1, \ldots, X_{n-1}) \]
+        とすると
+        \[S_0(C_1, \ldots, C_{n-1}) = 0, \ldots, S_{M-1} (C_1, \ldots, C_{n-1}) = 0, S_M (C_1,\ldots, C_{n-1}) = a \neq 0 \]
+        \[g = t_0 (X_1, \ldots, X_{n-1})X_n^N + t_1(X_1, \ldots, X_{n-1})X_n^{N-1} + \cdots + t_N (X_1, \ldots, X_{n-1}) \]
+        とする
+        \[ R(g, f, X_n) \in I \cap K \lbrack X_1, \ldots, X_{n-1} \rbrack \ (\because \text{定理2.2}) \ f,g\in I\]
+        \[ \det \begin{pmatrix}
+            t_0 & & & s_0 & & \\
+            \vdots & \ddots & & \vdots & \ddots & \\
+            \vdots &  & t_0 & \vdots & & s_0 \\
+            t_N & & & S_M & & \\
+             & & \vdots & & & \vdots \\
+              & & t_N & & S_m
+          \end{pmatrix}  = h(X_1, \ldots, X_n)  \]
+          矛盾、よってケース3はおこらない
+
+\section*{3章 Hilbertの零点定理}
+\subsection*{定理3.1 (HIlbertの零点定理 弱系)}
+  $K$: 代数的兵隊\\
+  $I \subset K \lbrack X_1, \ldots, X_n \rbrack$: イデアル \\
+  $\mathbf{V}_K (I) = \emptyset \Rightarrow I \ni 1$ (どんな$K$に対しても常になりたつ)
+
+\subsection*{Claim 1}
+  $f^\prime (Y_1, \ldots Y_{n+1}) = h(a_1, \ldots, a_n)Y_{n+1}^N + t$ \\
+  $h(Y_1, \ldots, Y_n) $は$0$でない$n$変数多項式$t$は$Y_{n+1}$に関して次数$N$未満の式と表される
+\subsection*{Claim 2}
+  $h(_1, \ldots, a_n) \neq 0 $なる$a_1, \ldots, a_n \in K$が存在する
+\subsection*{Claim 3}
+  $I^\prime = \lbrace f( Y_1 + a_1 Y_{n+1}, \ldots , Y_n + a_n Y_{n+1}, Y_{n+1}) \mid f \in I \rbrace \subset K \lbrack Y_1, \ldots, Y_{n+1} \rbrack$
+  とおくと$I^\prime$はイデアルである \\
 \end{document}
