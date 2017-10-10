@@ -125,4 +125,43 @@
         (c) 点列$x_n \in X$と$x \in X$に対して$X$上のノルム$\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価ならば\\
         ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_b$の意味で$x$に収束することは
         ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_a$の意味で$x$に収束することと同値である。
+      \paragraph{定理3.1}
+        $X$を有限次元ベクトル空間とする。\\
+        このとき、$X$上の全てのノルムは等価
+      \paragraph{証明}
+      (a) $\dim X = N$として$X$の基底の1つを$\lbrace u_1, u_2, \ldots, u_n \rbrace$とする。\\
+        このとき$x \in X$に対して$\parallel x \parallel_2 = \sqrt{x_1^2 + \cdots + x_n^2}$\\
+        ただし$x = x_1 u_1 + \cdots + x_N u_n$
+        と定義すると\\
+        $\parallel \bullet \parallel_2 : X \rightarrow \mathbf{R}$は$X$上のノルム
+
+      (b) $X$上の任意のノルムを$J(\bullet)$とする
+
+      (i) 任意の$x \in X$に対して\\
+      $x = x_1 u_1 + \cdots + x_N u_N$とすると\\
+      $J(x) = J(x_1 u_1 + \cdots + x_N u_N) \\
+       \leq J(X_1 u_1) + \cdots + J(x_N u_N) \\
+       = \mid x_1 \mid J(u_1) + \cdots + \mid x_n \mid J(u_N) \\
+       \leq \sqrt{\mid x_1 \mid^2 + \cdots + \mid x_N \mid^2} \sqrt{J{(u_1)}^2 + \cdots + J{(u_N)}^2}$ \\
+       従って $M_2 = \sqrt{J{(u_1)}^2 + \cdots + J{(u_N)}^2}$とおくと \\
+       $J(x)\leq M_2 \parallel x \parallel_2$が成り立つ
+
+       (ii) 任意の$x, y \in X$に対して\\
+       $ 0 \leq \mid J(x) - J(y) \mid \\ \leq J(x - y) \\ \leq M_2 \parallel x - y \parallel_2$ \\
+       よって$x \rightarrow y \Rightarrow J(x) \rightarrow J(y)$であるので \\ $J: X \rightarrow \mathbf{R}$はノルム空間$(X, \parallel\bullet\parallel_2)$上の連続関数\\
+       ここで、$\tilde{J}: \mathbf{R} \rightarrow \mathbf{R}$を\\
+      $\tilde{J}(x_1, \ldots ,x_N) = J(x_1 u_1 + \cdots + x_N u_N)$と定義すると$\tilde{J}$は$(\mathbf{R}^N, d_2)$上の連続関数
+
+      (iii) $S = \lbrace x \in X \mid \parallel x \parallel_2 =1 \rbrace \\ \tilde{S} = \lbrace (x_1, \ldots, x_N) \in \mathbf{R}^N \mid \sqrt{x_1^2 + \cdots + x_N^2} = 1 \rbrace$とすると　\\
+      $\tilde{S}$は$(\mathbf{R}^N, d_2)$における有界閉集合であるので、定理2.3 (b) (Heine-Borelの被覆定理)よりコンパクト集合。\\
+      よって定理2.5より、$\tilde{J}$は$\tilde{S}$上で最小値$M_1$をもつ、従って$J$は$S$上で最小値$M_1$を持つ。\\
+      $x\in S$のとき、$x \neq 0$であるので$J(x) > 0$よって$M_1 > 0$
+
+      以上から
+      \begin{itemize}
+        \item $x \neq 0$のとき \\
+        $M_1 \leq J (\frac{1}{\parallel x \parallel_2} x) = \frac{1}{\parallel x \parallel_2} x$ \\
+          従って$M_1\parallel x \parallel_2 \leq J(x)$
+        \item $x = 0$のとき \\ $M_1 \parallel x\parallel_2 = 0 = J(x)$
+      \end{itemize}
 \end{document}
