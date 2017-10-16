@@ -94,7 +94,7 @@
         \begin{enumerate}
           \item $I \neq \emptyset$
           \item $I \ni p, q \Rightarrow p + q \in I$
-          \item $I \ni p \Rightarrow{} {}^\forall h \in K\lbrack X_1, \ldots, X_n \rbrack hp \in I$
+          \item $I \ni p \Rightarrow{} {}^\forall h \in K\lbrack X_1, \ldots, X_n \rbrack \  hp \in I$
         \end{enumerate})
 
       \subparagraph{ケース1 \\}
@@ -125,16 +125,39 @@
 
 \section*{3章 Hilbertの零点定理}
 \subsection*{定理3.1 (HIlbertの零点定理 弱系)}
-  $K$: 代数的兵隊\\
+  $K$: 代数的閉体\\
   $I \subset K \lbrack X_1, \ldots, X_n \rbrack$: イデアル \\
   $\mathbf{V}_K (I) = \emptyset \Rightarrow I \ni 1$ (どんな$K$に対しても常になりたつ)
 
 \subsection*{Claim 1}
-  $f^\prime (Y_1, \ldots Y_{n+1}) = h(a_1, \ldots, a_n)Y_{n+1}^N + t$ \\
+  $f^\prime (Y_1, \ldots , Y_n, Y_{n+1}) = \\
+  f(Y_1 + a_1 Y_{n+1}, \ldots, Y_n + a_n Y_{n+1}, Y_{n+1}) = h(a_1, \ldots, a_n)Y_{n+1}^N + t$ \\
   $h(Y_1, \ldots, Y_n) $は$0$でない$n$変数多項式$t$は$Y_{n+1}$に関して次数$N$未満の式と表される
 \subsection*{Claim 2}
   $h(_1, \ldots, a_n) \neq 0 $なる$a_1, \ldots, a_n \in K$が存在する
 \subsection*{Claim 3}
   $I^\prime = \lbrace f( Y_1 + a_1 Y_{n+1}, \ldots , Y_n + a_n Y_{n+1}, Y_{n+1}) \mid f \in I \rbrace \subset K \lbrack Y_1, \ldots, Y_{n+1} \rbrack$
   とおくと$I^\prime$はイデアルである \\
+
+\subsection*{定理 3.2}
+  $K$を無限体とするとき、\\
+  $f(X_1, \ldots, X_n) \in K \lbrack X_1, \ldots , X_n \rbrack$が${}^\forall c_1, \ldots , c_n \in K \ f(c_1, \ldots, c_n) = 0 \Rightarrow f(X) = 0$
+  \subsubsection*{注意1}
+    $K$が有限体なら成り立たない
+  \subsubsection*{注意2}
+    $K$が代数的閉体なら$K$は無限体
+
+\subsection*{定理 3.3 Hilbertの零点定理 (強形)}
+  $K$: 代数的閉体 とするとき\\
+  $f_1(X_1, \ldots, X_n) , \ldots, f_S(X_1, \ldots, X_n), g(X_1, \ldots, X_n) \in K \lbrack X_1, \ldots, X_n \rbrack$に対して\\
+  $g\in\mathbf{I}(\mathbf{V}_K(\lbrace f_1, \ldots, f_l\rbrace)) \Rightarrow {}^\exists m \in \mathbf{N} \ g^m \in \langle f_1, \ldots, f_l \rangle$
+  \subsubsection*{これの意味}
+    $\mathbf{V}_K$は連立方程式
+    $\begin{cases}
+      f_1 = 0 \\
+      \vdots \\
+      f_l = 0
+    \end{cases}$の$K$における解全体の集合 \\
+    $g$が連立方程式のすべての解に対して$0$になるような$g$を$m$乗した$g^m$がイデアル$\langle f_1, \ldots, f_l \rangle$に属する
+
 \end{document}
