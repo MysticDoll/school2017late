@@ -164,4 +164,27 @@
           従って$M_1\parallel x \parallel_2 \leq J(x)$
         \item $x = 0$のとき \\ $M_1 \parallel x\parallel_2 = 0 = J(x)$
       \end{itemize}
+    \paragraph{定義 3.5}
+      $X$: ノルム空間
+      \begin{itemize}
+        \item[(a)] 部分空間$M \subset X$が閉集合であるとき、これを閉部分空間であるという。
+          \begin{itemize}
+            \item 部分空間$M \subset X \Rightarrow \bar{M}$ (閉包)は閉部分空間 
+            \item ${}^\forall S \subseteq X$, \text{span}{(S)}は閉部分空間
+          \end{itemize}
+        \item[(b)] $v \in X$ \\ $M$: $X$の閉部分空間 \\ このとき $V = v + M \overset{\text{def.}}{=} \lbrace v + m \mid m \in M  \rbrace$を線形多様体という
+        \item[(c)] $C \subseteq X$に対して、\\ $C$が凸集合 $\Leftrightarrow$ ${}^\forall x_1, x_2 \in C, {}^\forall \lambda \in \lbrack 0, 1\rbrack, \ \lambda x_1 + (1 - \lambda) x_2 \in C$
+      \end{itemize}
+
+    \paragraph{性質 3.2}
+      $X$をノルム空間とする
+      \begin{itemize}
+        \item[(a)] $v_0 \in X$ \\ $M$: $X$の閉部分空間 \\ $V = v_0 + M$ (線形多様体) \\ このとき${}^\forall v \in V, \ V = v + M$ \\ 線形多様体は閉凸集合。
+        \item[(b)] $M_\alpha$: $X$の閉部分空間 ($\alpha \in \mathcal{M}$) \\ $M = \underset{\alpha \in \mathcal{M}}{\cap} M_\alpha (\neq \emptyset) \Rightarrow M$は閉部分空間 \\
+                   $C_\alpha$: $X$の凸部分集合 ($\alpha \in \mathcal{M}$) \\ $C = \underset{\alpha \in \mathcal{M}}{\cap} C_\alpha (\neq \emptyset) \Rightarrow C$は閉凸集合 \\
+        \item[(c)] 略
+        \item[(d)] $X$の部分空間$M$の閉包$\bar{M}$は部分空間になる。また、凸集合$C \subset X$の閉包$\bar{C}$も凸集合になる。
+      \end{itemize}
+    \paragraph{定理 3.2}
+      $X$: ノルム空間, $M$: $X$の有限次元部分空間 $\Rightarrow M$は閉集合
 \end{document}
