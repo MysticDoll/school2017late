@@ -160,4 +160,15 @@
     \end{cases}$の$K$における解全体の集合 \\
     $g$が連立方程式のすべての解に対して$0$になるような$g$を$m$乗した$g^m$がイデアル$\langle f_1, \ldots, f_l \rangle$に属する
 
+  \paragraph{注意}
+    実は弱形は強形の特殊な場合である。
+
+    強形を論理式のみで書くと\\
+    ${}^\forall \bar{c} \in K^n \big( f_1  (\bar{c}) = 0 \wedge \cdots \wedge f_s(\bar{c}) = 0 \rightarrow f(\bar{c}) = 0\big) \rightarrow {}^\exists m \in \mathbf{N} \ f^m \in \langle f_1, \ldots , f_s \rangle \\
+    \Leftrightarrow \\
+    \lnot {}^\forall \bar{c} \in K^n ( \lnot \big(f_1(\bar{c}) = 0 \wedge \cdots \wedge f_s(\bar{c}) = 0\big) )\vee {}^\exists m \in \mathbf{N} \ f^m \in \langle f_1, \ldots, f_s \rangle$ \\
+    $f(\bar{X})=1$に対してももちろんなりたつ、\\
+    ${}^\forall f_1, \ldots, f_s \in K \lbrack \bar{X} \rbrack \\
+    \lnot {}^\forall \bar{c} \in K^n \big(\lnot (f_1 (\bar{c}) = 0 \wedge \cdots \wedge f_s(\bar{c}) = 0)\big) \vee {}^\exists m \in \mathbf{N} \ 1^m \langle f_1, \ldots, f_s \rangle $
+
 \end{document}
