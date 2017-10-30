@@ -171,4 +171,24 @@
     ${}^\forall f_1, \ldots, f_s \in K \lbrack \bar{X} \rbrack \\
     \lnot {}^\forall \bar{c} \in K^n \big(\lnot (f_1 (\bar{c}) = 0 \wedge \cdots \wedge f_s(\bar{c}) = 0)\big) \vee {}^\exists m \in \mathbf{N} \ 1^m \langle f_1, \ldots, f_s \rangle $
 
+\section*{4章 連立代数方程式の解の個数}
+\subsection*{定理 4.1}
+  $K$: 代数的閉体 \\
+  $I \subset K \lbrack X \rbrack = K \lbrack X_1, \ldots, X_n \rbrack$ に対して\\
+  $\mathbf{V}_K (I)$が有限集合 $\Leftrightarrow {}^\forall  i = 1 , \ldots , n \ {}^\exists h_i (X_i) \in K \lbrack X_i \rbrack \ h_i (X_i) \in I$
+\subsection*{定義 4.1}
+  $I \subset K \lbrack \bar X \rbrack$: イデアル \\
+  $f, g \in K \lbrack \bar X \rbrack$ に対して\\
+  $f \ \sim g \overset{\text{def}}{\Leftrightarrow} f- g \in I$で$\sim$を定義すると$\sim$は同値関係になる。\\
+  $\tilde{}$の同値類上に
+  \begin{itemize}
+    \item $\lbrack f \rbrack_{\sim} + \lbrack g \rbrack_{\sim} = \lbrack f + g \rbrack_{\sim} $
+    \item $\lbrack f \rbrack_{\sim} \cdot \lbrack g \rbrack_{\sim} = \lbrack f g \rbrack_{\sim} $
+  \end{itemize}
+  で$+$と$\cdot$を自然に定義すると同値類は可換環になる。これを$K\lbrack \bar X \rbrack$の$I$による剰余環とよび、$K\lbrack \bar X \rbrack$で表す。 \\
+  ($+$と$\cdot$がwell-definedになることは示さないといけない。\\ すなわち、$f \sim f^\prime, g \sim g^\prime$ならば、$f + g \sim f^\prime + g^\prime, f\cdot g \sim f^\prime \cdot g^\prime $を示す必要がある。)
+\subsection*{定義 4.2}
+  $K\lbrack \bar X \rbrack / I $は$K$上の線形空間で$I$もその部分空間とみなせる。\\
+  $K \lbrack \bar X \rbrack / I $は線形空間としてのその商空間ともみなせる。\\
+  その次元を$\dim K \lbrack \bar X \rbrack / I$で表す
 \end{document}
