@@ -2,11 +2,12 @@
 \usepackage[truedimen,margin=25truemm]{geometry}
 \usepackage{amsmath}
 \usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
 \usepackage{amssymb}
 
 \begin{document}
   \paragraph{例}
-     \subparagraph{(3)}
+    \subparagraph{(3)}
       $\mathbf{R}$の閉区間$\lbrack a, b \rbrack$上で定義された実数値連続関数全体の集合 \\
       $C\lbrack a, b \rbrack$において、可算とスカラー倍演算を
       \begin{itemize}
@@ -22,169 +23,213 @@
         = f(x) + \big(g(x) + h(x)\big) \\
         = f(x) + (g + h) (x) \\
       = \big(f+ (g + h) \big) (x) \end{math}
-
+      
       よって$(f+ g) + h = f + (g + h)$
-      \setcounter{section}{3}
-      \subsection{ノルム空間}
-        \paragraph{定義 3.1}
-        \begin{itemize}
-          \item $X$: 実線形空間
-          \item $\parallel \bullet \parallel : X \rightarrow \mathbf{R}$
-        \end{itemize}
-
-        このとき$\parallel \bullet \parallel$が$X$上のノルム \\
-        $\Leftrightarrow$ 任意の$x, y \in X, a \in \mathbf{R}$に対して \\
-        \begin{itemize}
-          \item[(a)] $\parallel x \parallel \geq 0$かつ$\parallel x \parallel = 0 \Leftrightarrow x = 0$ (非負性)
-          \item[(b)] $\parallel x + y \parallel \leq \parallel x \parallel + \parallel y \parallel$ (三角不等式)
-          \item[(c)] $\parallel \alpha x \parallel = \mid\alpha\mid \parallel x \parallel$ (同次性)
-        \end{itemize}
-
-        また、ノルムが定義された実線形空間を{\bf ノルム空間}という
-        \subparagraph{注} 
+  \setcounter{section}{3}
+  \subsection{ノルム空間}
+    \paragraph{定義 3.1}
+    \begin{itemize}
+      \item $X$: 実線形空間
+      \item $\parallel \bullet \parallel : X \rightarrow \mathbf{R}$
+    \end{itemize}
+    
+    このとき$\parallel \bullet \parallel$が$X$上のノルム \\
+    $\Leftrightarrow$ 任意の$x, y \in X, a \in \mathbf{R}$に対して \\
+    \begin{itemize}
+      \item[(a)] $\parallel x \parallel \geq 0$かつ$\parallel x \parallel = 0 \Leftrightarrow x = 0$ (非負性)
+      \item[(b)] $\parallel x + y \parallel \leq \parallel x \parallel + \parallel y \parallel$ (三角不等式)
+      \item[(c)] $\parallel \alpha x \parallel = \mid\alpha\mid \parallel x \parallel$ (同次性)
+    \end{itemize}
+    
+    また、ノルムが定義された実線形空間を{\bf ノルム空間}という
+    \subparagraph{注} 
       「$X$はノルム空間」と言ったり、どのノルムを考えるのか明示したいときは「$(X, \parallel \bullet \parallel)$はノルム空間」と言ったりする
-
-        \subparagraph{例}
-          \begin{itemize}
-            \item[(1)] $\parallel \bullet \parallel_2 : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_2 = \sqrt{x_1^2 + \cdots + x_N^2}$
-              (ただし$\mathbf{x} = \begin{pmatrix} x_1 \\ \vdots \\ x_N \end{pmatrix})$と定めると
-              $\parallel \bullet \parallel_2$は$\mathbf{R}^N$上のノルム
-            \item[(2)] $\parallel \bullet \parallel_1 : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_1 = \mid x_1 \mid + \cdots  \mid x_N \mid$と定めると
-              $\parallel \bullet \parallel_1$は$\mathbf{R}^N$上のノルム
-            \item[(3)] $\parallel \bullet \parallel_\infty : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_\infty = \max_{1 \leq i \leq N} \mid x_i \mid $と定めると
-              $\parallel \bullet \parallel_\infty$は$\mathbf{R}^N$上のノルム
-            \item[(4)] $1 \leq p$とする。\\ $\parallel\bullet\parallel_p : \mathbf{R}^N \rightarrow \mathbf{R}$を \\
-            $\parallel \mathbf{x} \parallel_p = {\big( \mid x_1\mid^p + \cdots + \mid x_N \mid^p \big)}^\frac1p$と定めると \\
-              $\parallel\bullet\parallel_p$は$\mathbf{R}^N$上のノルム
-          \end{itemize}
-
-        \paragraph{注}
-          ノルム空間$(X, \parallel\bullet\parallel)$に対して、$d: X^2 \rightarrow \mathbf{R}$を$d(x, y) = \parallel x - y \parallel$と定めると$d$は$X$上の距離関数
-
-        \paragraph{証明 cf.p16}
-          $x, y, z \in X$を任意に取る。
-          \begin{itemize}
-            \item[$(D_1)$] $d(x, y) = \parallel x - y\parallel \geq 0$ (ノルムの非負性より) \\
-              $d(x, y) = 0 \Leftrightarrow \parallel x -y \parallel = 0 \Leftrightarrow x - y = 0$ (ノルムの非負性より)
-            \item[$(D_2)$]  $d(y, x) = \parallel y - x \parallel = \parallel - (x - y) \parallel = \parallel (-1) (x -y) \parallel = \mid -1 \mid \parallel x - y \parallel = d(x, y)$
-            \item[$(D_3)$] $d(x, z) + d(z, y) = \parallel x - z \parallel + \parallel z - y \parallel \geq \parallel (x - z) + (z - y) \parallel = \parallel x - y \parallel = d(x, y)$
-          \end{itemize}
-
-        \paragraph{注}
-          $X$が実線形空間をなし、$d$が$X$上の距離であるとき
-          $\parallel \bullet \parallel : X \rightarrow \mathbf{R}$を
-          \[\parallel \mathbf{x} \parallel = d(\mathbf{x}, \mathbf{0}) \]
-          と定義する。
-
-          このとき、$d$が次の条件を満たすならば
-          $\parallel \bullet \parallel$は$X$上のノルムになる \\
-          任意の$x, y, z \in X$と$\alpha \in \mathbf{R}$に対して
-          \begin{enumerate}
-            \item 
-          \end{enumerate}
-
-      \paragraph{性質 3.1}
-        $(X, \parallel \bullet \parallel)$: ノルム空間 \\
-        任意の$x,y \in X$に対して
-        \[ \mid \parallel x \parallel - \parallel y \parallel \mid \leq \parallel x - y\parallel \]
-      \subparagraph{証明}
-        \[ \parallel x \parallel = \parallel x - y + y \parallel \leq \parallel x - y \parallel + \parallel y \parallel \]
-        よって$\parallel x \parallel - \parallel y \parallel \leq \parallel x - y \parallel$\\
-        \[\parallel y \parallel = \parallel y - x + x \parallel \leq \parallel y - x \parallel + \parallel x \parallel \]
-        よって$\parallel y \parallel - \parallel x \parallel \leq \parallel y - x \parallel$
-
-      \paragraph{定義 3.2 \\}
-        \noindent$X$: ノルム空間 \\
-        ${(x_n)}_{n=1}^\infty$: $X$の点列 \\
-        $x \in X$ \\
-        このとき、${(x_n)}_{n=1}^\infty$が収束$\Leftrightarrow \parallel x_n - x \parallel \rightarrow 0 \ (n \rightarrow 0)$
-
-      \paragraph{定義 3.3 (写像の連続)}
-        (cf.\ 定義2.8 p39)
-      \paragraph{注意1}
-        ノルムは連続\\
-        \raise0.2ex\hbox{\textcircled{\scriptsize{$\because$}}}
-        $X$の点列${(x_n)}_{n=1}^\infty$と$x \in X$について$x_n \rightarrow x \ (x \rightarrow \infty)$であるとき、
-        \[ 0 \leq \mid \parallel x_n \parallel - \parallel x \parallel \mid \leq \parallel x_n -  x\parallel \rightarrow 0 \ (n \rightarrow \infty) \]
-      \paragraph{定義 3.4 \\}
-        $X$: 実線形空間 \\
-        $\parallel \bullet \parallel_a, \parallel \bullet \parallel_b$ $X$上のノルム 
-
-        $\parallel \bullet \parallel_a$と$\parallel\bullet\parallel_b$が等価 \\
-        $\Leftrightarrow$ 任意の$x \in X$にs対して、
-        \[ M_1 \parallel x \parallel_a \leq \parallel x \parallel_b \leq M_2 \parallel x \parallel_a \]
-        をみたす$M_1, M_2 > 0$が存在
-      \paragraph{注意2}
-        (a) (b) ノルムが等価であるという関係は同値関係: \\
-        $X$上の任意の$\parallel\bullet\parallel_a, \parallel\bullet\parallel_b, \parallel\bullet\parallel_c$に対して、
+      
+    \subparagraph{例}
+      \begin{itemize}
+        \item[(1)] $\parallel \bullet \parallel_2 : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_2 = \sqrt{x_1^2 + \cdots + x_N^2}$
+          (ただし$\mathbf{x} = \begin{pmatrix} x_1 \\ \vdots \\ x_N \end{pmatrix})$と定めると
+          $\parallel \bullet \parallel_2$は$\mathbf{R}^N$上のノルム
+        \item[(2)] $\parallel \bullet \parallel_1 : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_1 = \mid x_1 \mid + \cdots  \mid x_N \mid$と定めると
+          $\parallel \bullet \parallel_1$は$\mathbf{R}^N$上のノルム
+        \item[(3)] $\parallel \bullet \parallel_\infty : \mathbf{R}^N \rightarrow \mathbf{R}$を$\parallel \mathbf{x} \parallel_\infty = \max_{1 \leq i \leq N} \mid x_i \mid $と定めると
+          $\parallel \bullet \parallel_\infty$は$\mathbf{R}^N$上のノルム
+        \item[(4)] $1 \leq p$とする。\\ $\parallel\bullet\parallel_p : \mathbf{R}^N \rightarrow \mathbf{R}$を \\
+        $\parallel \mathbf{x} \parallel_p = {\big( \mid x_1\mid^p + \cdots + \mid x_N \mid^p \big)}^\frac1p$と定めると \\
+          $\parallel\bullet\parallel_p$は$\mathbf{R}^N$上のノルム
+      \end{itemize}
+    
+    \paragraph{注}
+      ノルム空間$(X, \parallel\bullet\parallel)$に対して、$d: X^2 \rightarrow \mathbf{R}$を$d(x, y) = \parallel x - y \parallel$と定めると$d$は$X$上の距離関数
+    
+    \paragraph{証明 cf.p16}
+      $x, y, z \in X$を任意に取る。
+      \begin{itemize}
+        \item[$(D_1)$] $d(x, y) = \parallel x - y\parallel \geq 0$ (ノルムの非負性より) \\
+          $d(x, y) = 0 \Leftrightarrow \parallel x -y \parallel = 0 \Leftrightarrow x - y = 0$ (ノルムの非負性より)
+        \item[$(D_2)$]  $d(y, x) = \parallel y - x \parallel = \parallel - (x - y) \parallel = \parallel (-1) (x -y) \parallel = \mid -1 \mid \parallel x - y \parallel = d(x, y)$
+        \item[$(D_3)$] $d(x, z) + d(z, y) = \parallel x - z \parallel + \parallel z - y \parallel \geq \parallel (x - z) + (z - y) \parallel = \parallel x - y \parallel = d(x, y)$
+      \end{itemize}
+    
+    \paragraph{注}
+      $X$が実線形空間をなし、$d$が$X$上の距離であるとき
+      $\parallel \bullet \parallel : X \rightarrow \mathbf{R}$を
+      \[\parallel \mathbf{x} \parallel = d(\mathbf{x}, \mathbf{0}) \]
+      と定義する。
+    
+      このとき、$d$が次の条件を満たすならば
+      $\parallel \bullet \parallel$は$X$上のノルムになる \\
+      任意の$x, y, z \in X$と$\alpha \in \mathbf{R}$に対して
+      \begin{enumerate}
+        \item 
+      \end{enumerate}
+      
+    \paragraph{性質 3.1}
+      $(X, \parallel \bullet \parallel)$: ノルム空間 \\
+      任意の$x,y \in X$に対して
+      \[ \mid \parallel x \parallel - \parallel y \parallel \mid \leq \parallel x - y\parallel \]
+    \subparagraph{証明}
+      \[ \parallel x \parallel = \parallel x - y + y \parallel \leq \parallel x - y \parallel + \parallel y \parallel \]
+      よって$\parallel x \parallel - \parallel y \parallel \leq \parallel x - y \parallel$\\
+      \[\parallel y \parallel = \parallel y - x + x \parallel \leq \parallel y - x \parallel + \parallel x \parallel \]
+      よって$\parallel y \parallel - \parallel x \parallel \leq \parallel y - x \parallel$
+      
+    \paragraph{定義 3.2 \\}
+      \noindent$X$: ノルム空間 \\
+      ${(x_n)}_{n=1}^\infty$: $X$の点列 \\
+      $x \in X$ \\
+      このとき、${(x_n)}_{n=1}^\infty$が収束$\Leftrightarrow \parallel x_n - x \parallel \rightarrow 0 \ (n \rightarrow 0)$
+    
+    \paragraph{定義 3.3 (写像の連続)}
+      (cf.\ 定義2.8 p39)
+    \paragraph{注意1}
+      ノルムは連続\\
+      \raise0.2ex\hbox{\textcircled{\scriptsize{$\because$}}}
+      $X$の点列${(x_n)}_{n=1}^\infty$と$x \in X$について$x_n \rightarrow x \ (x \rightarrow \infty)$であるとき、
+      \[ 0 \leq \mid \parallel x_n \parallel - \parallel x \parallel \mid \leq \parallel x_n -  x\parallel \rightarrow 0 \ (n \rightarrow \infty) \]
+    \paragraph{定義 3.4 \\}
+      $X$: 実線形空間 \\
+      $\parallel \bullet \parallel_a, \parallel \bullet \parallel_b$ $X$上のノルム 
+    
+      $\parallel \bullet \parallel_a$と$\parallel\bullet\parallel_b$が等価 \\
+      $\Leftrightarrow$ 任意の$x \in X$にs対して、
+      \[ M_1 \parallel x \parallel_a \leq \parallel x \parallel_b \leq M_2 \parallel x \parallel_a \]
+      をみたす$M_1, M_2 > 0$が存在
+    \paragraph{注意2}
+      (a) (b) ノルムが等価であるという関係は同値関係: \\
+      $X$上の任意の$\parallel\bullet\parallel_a, \parallel\bullet\parallel_b, \parallel\bullet\parallel_c$に対して、
+      \begin{itemize}
+        \item[反射律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$は等価
+        \item[対象律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価 $\Leftrightarrow$ $\parallel\bullet\parallel_b$と$\parallel\bullet\parallel_a$は等価
+        \item[推移律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価かつ$\parallel\bullet\parallel_b$と$\parallel\bullet\parallel_c$が等価 $\Rightarrow$ $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_c$は等価
+      \end{itemize}
+      (c) 点列$x_n \in X$と$x \in X$に対して$X$上のノルム$\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価ならば\\
+      ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_b$の意味で$x$に収束することは
+      ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_a$の意味で$x$に収束することと同値である。
+    \paragraph{定理3.1}
+      $X$を有限次元ベクトル空間とする。\\
+      このとき、$X$上の全てのノルムは等価
+    \paragraph{証明}
+    (a) $\dim X = N$として$X$の基底の1つを$\lbrace u_1, u_2, \ldots, u_n \rbrace$とする。\\
+      このとき$x \in X$に対して$\parallel x \parallel_2 = \sqrt{x_1^2 + \cdots + x_n^2}$\\
+      ただし$x = x_1 u_1 + \cdots + x_N u_n$
+      と定義すると\\
+      $\parallel \bullet \parallel_2 : X \rightarrow \mathbf{R}$は$X$上のノルム
+    
+    (b) $X$上の任意のノルムを$J(\bullet)$とする
+    
+    (i) 任意の$x \in X$に対して\\
+    $x = x_1 u_1 + \cdots + x_N u_N$とすると\\
+    $J(x) = J(x_1 u_1 + \cdots + x_N u_N) \\
+     \leq J(X_1 u_1) + \cdots + J(x_N u_N) \\
+     = \mid x_1 \mid J(u_1) + \cdots + \mid x_n \mid J(u_N) \\
+     \leq \sqrt{\mid x_1 \mid^2 + \cdots + \mid x_N \mid^2} \sqrt{J{(u_1)}^2 + \cdots + J{(u_N)}^2}$ \\
+     従って $M_2 = \sqrt{J{(u_1)}^2 + \cdots + J{(u_N)}^2}$とおくと \\
+     $J(x)\leq M_2 \parallel x \parallel_2$が成り立つ
+    
+     (ii) 任意の$x, y \in X$に対して\\
+     $ 0 \leq \mid J(x) - J(y) \mid \\ \leq J(x - y) \\ \leq M_2 \parallel x - y \parallel_2$ \\
+     よって$x \rightarrow y \Rightarrow J(x) \rightarrow J(y)$であるので \\ $J: X \rightarrow \mathbf{R}$はノルム空間$(X, \parallel\bullet\parallel_2)$上の連続関数\\
+     ここで、$\tilde{J}: \mathbf{R} \rightarrow \mathbf{R}$を\\
+    $\tilde{J}(x_1, \ldots ,x_N) = J(x_1 u_1 + \cdots + x_N u_N)$と定義すると$\tilde{J}$は$(\mathbf{R}^N, d_2)$上の連続関数
+    
+    (iii) $S = \lbrace x \in X \mid \parallel x \parallel_2 =1 \rbrace \\ \tilde{S} = \lbrace (x_1, \ldots, x_N) \in \mathbf{R}^N \mid \sqrt{x_1^2 + \cdots + x_N^2} = 1 \rbrace$とすると　\\
+    $\tilde{S}$は$(\mathbf{R}^N, d_2)$における有界閉集合であるので、定理2.3 (b) (Heine-Borelの被覆定理)よりコンパクト集合。\\
+    よって定理2.5より、$\tilde{J}$は$\tilde{S}$上で最小値$M_1$をもつ、従って$J$は$S$上で最小値$M_1$を持つ。\\
+    $x\in S$のとき、$x \neq 0$であるので$J(x) > 0$よって$M_1 > 0$
+    
+    以上から
+    \begin{itemize}
+      \item $x \neq 0$のとき \\
+      $M_1 \leq J (\frac{1}{\parallel x \parallel_2} x) = \frac{1}{\parallel x \parallel_2} x$ \\
+        従って$M_1\parallel x \parallel_2 \leq J(x)$
+      \item $x = 0$のとき \\ $M_1 \parallel x\parallel_2 = 0 = J(x)$
+    \end{itemize}
+  \paragraph{定義 3.5}
+    $X$: ノルム空間
+    \begin{itemize}
+      \item[(a)] 部分空間$M \subset X$が閉集合であるとき、これを閉部分空間であるという。
         \begin{itemize}
-          \item[反射律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$は等価
-          \item[対象律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価 $\Leftrightarrow$ $\parallel\bullet\parallel_b$と$\parallel\bullet\parallel_a$は等価
-          \item[推移律] $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価かつ$\parallel\bullet\parallel_b$と$\parallel\bullet\parallel_c$が等価 $\Rightarrow$ $\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_c$は等価
+          \item 部分空間$M \subset X \Rightarrow \bar{M}$ (閉包)は閉部分空間 
+          \item ${}^\forall S \subseteq X$, \text{span}{(S)}は閉部分空間
         \end{itemize}
-        (c) 点列$x_n \in X$と$x \in X$に対して$X$上のノルム$\parallel\bullet\parallel_a$と$\parallel\bullet\parallel_b$が等価ならば\\
-        ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_b$の意味で$x$に収束することは
-        ${(x_n)}_{n=1}^\infty$が$\parallel\bullet\parallel_a$の意味で$x$に収束することと同値である。
-      \paragraph{定理3.1}
-        $X$を有限次元ベクトル空間とする。\\
-        このとき、$X$上の全てのノルムは等価
-      \paragraph{証明}
-      (a) $\dim X = N$として$X$の基底の1つを$\lbrace u_1, u_2, \ldots, u_n \rbrace$とする。\\
-        このとき$x \in X$に対して$\parallel x \parallel_2 = \sqrt{x_1^2 + \cdots + x_n^2}$\\
-        ただし$x = x_1 u_1 + \cdots + x_N u_n$
-        と定義すると\\
-        $\parallel \bullet \parallel_2 : X \rightarrow \mathbf{R}$は$X$上のノルム
+      \item[(b)] $v \in X$ \\ $M$: $X$の閉部分空間 \\ このとき $V = v + M \overset{\text{def.}}{=} \lbrace v + m \mid m \in M  \rbrace$を線形多様体という
+      \item[(c)] $C \subseteq X$に対して、\\ $C$が凸集合 $\Leftrightarrow$ ${}^\forall x_1, x_2 \in C, {}^\forall \lambda \in \lbrack 0, 1\rbrack, \ \lambda x_1 + (1 - \lambda) x_2 \in C$
+    \end{itemize}
 
-      (b) $X$上の任意のノルムを$J(\bullet)$とする
+  \paragraph{性質 3.2}
+    $X$をノルム空間とする
+    \begin{itemize}
+      \item[(a)] $v_0 \in X$ \\ $M$: $X$の閉部分空間 \\ $V = v_0 + M$ (線形多様体) \\ このとき${}^\forall v \in V, \ V = v + M$ \\ 線形多様体は閉凸集合。
+      \item[(b)] $M_\alpha$: $X$の閉部分空間 ($\alpha \in \mathcal{M}$) \\ $M = \underset{\alpha \in \mathcal{M}}{\cap} M_\alpha (\neq \emptyset) \Rightarrow M$は閉部分空間 \\
+                 $C_\alpha$: $X$の凸部分集合 ($\alpha \in \mathcal{M}$) \\ $C = \underset{\alpha \in \mathcal{M}}{\cap} C_\alpha (\neq \emptyset) \Rightarrow C$は閉凸集合 \\
+      \item[(c)] 略
+      \item[(d)] $X$の部分空間$M$の閉包$\bar{M}$は部分空間になる。また、凸集合$C \subset X$の閉包$\bar{C}$も凸集合になる。
+    \end{itemize}
+  \paragraph{定理 3.2}
+    $X$: ノルム空間, $M$: $X$の有限次元部分空間 $\Rightarrow M$は閉集合
+  \subsection{内積空間}
+  \paragraph{定義 3.6}
+    実 (または複素)線形空間$X$において次の (I-a) から (I-c)を満たす写像
+    \[ \langle \bullet, \bullet \rangle : X^2 \rightarrow \mathbf{R} \ (\text{または} \  \mathbf{C}) \]
+    を$X$上の内積といい、また、$x,y\in X$に対して$\langle x,y \rangle$を$x$と$y$の内積という。このとき$X$を内積空間という
 
-      (i) 任意の$x \in X$に対して\\
-      $x = x_1 u_1 + \cdots + x_N u_N$とすると\\
-      $J(x) = J(x_1 u_1 + \cdots + x_N u_N) \\
-       \leq J(X_1 u_1) + \cdots + J(x_N u_N) \\
-       = \mid x_1 \mid J(u_1) + \cdots + \mid x_n \mid J(u_N) \\
-       \leq \sqrt{\mid x_1 \mid^2 + \cdots + \mid x_N \mid^2} \sqrt{J{(u_1)}^2 + \cdots + J{(u_N)}^2}$ \\
-       従って $M_2 = \sqrt{J{(u_1)}^2 + \cdots + J{(u_N)}^2}$とおくと \\
-       $J(x)\leq M_2 \parallel x \parallel_2$が成り立つ
+    ${}^\forall x, y, z \in X$と$\alpha, \beta \in \mathbf{R} \ (\text{または} \ \mathbf{C})$
+    \begin{itemize}
+      \item[(I-a)] 対称性 (またはエルミート性): $\langle x, y \rangle = \overline{\langle y, x \rangle}$
+      \item[(I-b)] 非負性: $\langle x, x \rangle \geq 0$ \\ $\langle x, x \rangle = 0 \Leftrightarrow x = 0$
+      \item[(I-c)] 線形性: $\langle \alpha x + \beta y, z \rangle = \alpha \langle x, z \rangle + \beta \langle y, z \rangle$
+    \end{itemize}
 
-       (ii) 任意の$x, y \in X$に対して\\
-       $ 0 \leq \mid J(x) - J(y) \mid \\ \leq J(x - y) \\ \leq M_2 \parallel x - y \parallel_2$ \\
-       よって$x \rightarrow y \Rightarrow J(x) \rightarrow J(y)$であるので \\ $J: X \rightarrow \mathbf{R}$はノルム空間$(X, \parallel\bullet\parallel_2)$上の連続関数\\
-       ここで、$\tilde{J}: \mathbf{R} \rightarrow \mathbf{R}$を\\
-      $\tilde{J}(x_1, \ldots ,x_N) = J(x_1 u_1 + \cdots + x_N u_N)$と定義すると$\tilde{J}$は$(\mathbf{R}^N, d_2)$上の連続関数
+    さらに、$x,y\in X$に対して
+    \[ x \perp y \Leftrightarrow \langle x, y \rangle = 0 \]
+    を$x$と$y$が直交するといい。\\
+    そして$\emptyset \neq S \subseteq X$に対して
+    \[S^\perp = \lbrace x \in X \mid {}^\forall y \in S, x \perp y \rbrace \]
+    と表すことにする
 
-      (iii) $S = \lbrace x \in X \mid \parallel x \parallel_2 =1 \rbrace \\ \tilde{S} = \lbrace (x_1, \ldots, x_N) \in \mathbf{R}^N \mid \sqrt{x_1^2 + \cdots + x_N^2} = 1 \rbrace$とすると　\\
-      $\tilde{S}$は$(\mathbf{R}^N, d_2)$における有界閉集合であるので、定理2.3 (b) (Heine-Borelの被覆定理)よりコンパクト集合。\\
-      よって定理2.5より、$\tilde{J}$は$\tilde{S}$上で最小値$M_1$をもつ、従って$J$は$S$上で最小値$M_1$を持つ。\\
-      $x\in S$のとき、$x \neq 0$であるので$J(x) > 0$よって$M_1 > 0$
+    \subparagraph{注意}
+      ${}^\forall x,y \in X$に対して\\
+      \[x\perp y \Leftrightarrow y \perp x\]
+    \subparagraph{注意}
+      ${}^\forall x \in X$に対して
+      \[\langle x, \rangle = 0 , \therefore x \perp 0 \]
+    \subparagraph{注意}
+      ${}^\forall S \subseteq X ( S \neq \emptyset)$に対して、$S^\perp$は$X$の部分空間
 
-      以上から
-      \begin{itemize}
-        \item $x \neq 0$のとき \\
-        $M_1 \leq J (\frac{1}{\parallel x \parallel_2} x) = \frac{1}{\parallel x \parallel_2} x$ \\
-          従って$M_1\parallel x \parallel_2 \leq J(x)$
-        \item $x = 0$のとき \\ $M_1 \parallel x\parallel_2 = 0 = J(x)$
-      \end{itemize}
-    \paragraph{定義 3.5}
-      $X$: ノルム空間
-      \begin{itemize}
-        \item[(a)] 部分空間$M \subset X$が閉集合であるとき、これを閉部分空間であるという。
-          \begin{itemize}
-            \item 部分空間$M \subset X \Rightarrow \bar{M}$ (閉包)は閉部分空間 
-            \item ${}^\forall S \subseteq X$, \text{span}{(S)}は閉部分空間
-          \end{itemize}
-        \item[(b)] $v \in X$ \\ $M$: $X$の閉部分空間 \\ このとき $V = v + M \overset{\text{def.}}{=} \lbrace v + m \mid m \in M  \rbrace$を線形多様体という
-        \item[(c)] $C \subseteq X$に対して、\\ $C$が凸集合 $\Leftrightarrow$ ${}^\forall x_1, x_2 \in C, {}^\forall \lambda \in \lbrack 0, 1\rbrack, \ \lambda x_1 + (1 - \lambda) x_2 \in C$
-      \end{itemize}
+    \subparagraph{例}
+      $\mathbf{R}^n$において\\
+      \[ \langle \mathbf{x}, \mathbf{y} \rangle = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n\]
+      (ただし$\mathbf{x} = \begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}, \mathbf{y} = \begin{pmatrix}y_1 \\ \vdots \\ y_n \end{pmatrix} \in \mathbf{R}^n$)\\
+      は$\mathbf{R}^n$上の内積を定める。
 
-    \paragraph{性質 3.2}
-      $X$をノルム空間とする
-      \begin{itemize}
-        \item[(a)] $v_0 \in X$ \\ $M$: $X$の閉部分空間 \\ $V = v_0 + M$ (線形多様体) \\ このとき${}^\forall v \in V, \ V = v + M$ \\ 線形多様体は閉凸集合。
-        \item[(b)] $M_\alpha$: $X$の閉部分空間 ($\alpha \in \mathcal{M}$) \\ $M = \underset{\alpha \in \mathcal{M}}{\cap} M_\alpha (\neq \emptyset) \Rightarrow M$は閉部分空間 \\
-                   $C_\alpha$: $X$の凸部分集合 ($\alpha \in \mathcal{M}$) \\ $C = \underset{\alpha \in \mathcal{M}}{\cap} C_\alpha (\neq \emptyset) \Rightarrow C$は閉凸集合 \\
-        \item[(c)] 略
-        \item[(d)] $X$の部分空間$M$の閉包$\bar{M}$は部分空間になる。また、凸集合$C \subset X$の閉包$\bar{C}$も凸集合になる。
-      \end{itemize}
-    \paragraph{定理 3.2}
-      $X$: ノルム空間, $M$: $X$の有限次元部分空間 $\Rightarrow M$は閉集合
+    \subparagraph{例}
+      $M_{m,n}$ ($m \times n$の実行列全体において) 
+      \[ \langle A, B \rangle = \underset{i=1}{ \overset{m}{\sum}}\underset{j=1}{\overset{n}{\sum}} a_{ij} b_{ij} = \text{tr} ({}^t BA)\]
+      (ただし$A= (a_{ij}), B = (b_{ij}) \in M_{m,n}$)は$_{m,n}$上の内積を定める。  (Hilbert-Schmidt内積)
+    \subparagraph{例}
+      $C\lbrack0,1\rbrack = $ (閉区間$\lbrack0,1\rbrack (\subseteq \mathbf{R})$上の実数値連続関数全体の集合) 
+      \[\langle f, g \rangle = \int_0^1 f(x) g(x) \text{dx} \]
+      は$C\lbrack0,1\rbrack$上の内積を定める
+  
 \end{document}
