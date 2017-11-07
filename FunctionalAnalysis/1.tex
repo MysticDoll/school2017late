@@ -231,5 +231,19 @@
       $C\lbrack0,1\rbrack = $ (閉区間$\lbrack0,1\rbrack (\subseteq \mathbf{R})$上の実数値連続関数全体の集合) 
       \[\langle f, g \rangle = \int_0^1 f(x) g(x) \text{dx} \]
       は$C\lbrack0,1\rbrack$上の内積を定める
+  \paragraph{性質 3.3}
+    $(X, \langle \bullet, \bullet \rangle)$を内積空間とする。\\
+    このとき、写像$\parallel\bullet\parallel: X \rightarrow \mathbf{R}$を
+    \[ \parallel x\parallel = \sqrt{\langle x, x \rangle} \]
+    と定義すると、$\parallel\bullet\parallel$は$X$上のノルムとなる。\\
+    このノルムを内積から誘導されたノルムといい、次が成立
+
+    任意の$x,y\in X$に対して
+    \begin{itemize}
+      \item[(a)] (Chauchy-Schwarzの不等式) $\mid\langle x, y \rangle\mid \leq \parallel x\parallel \parallel y\parallel$ 等号成立 $\Leftrightarrow x, y$が線形従属
+      \item[(b)] $\parallel x \parallel = \sup_{\parallel u \parallel = 1} \mid \langle x, u \rangle \mid = \max_{\parallel u \parallel = 1} \mid \langle x, u\rangle \mid$
+      \item[(c)] (三角不等式) $\parallel x + y \parallel \leq \parallel x\parallel + \parallel y \parallel$ 等号成立 $\Leftrightarrow x, y$の一方が他方の非負実数倍
+    \end{itemize}
+  
   
 \end{document}
