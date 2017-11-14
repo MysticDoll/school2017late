@@ -244,6 +244,28 @@
       \item[(b)] $\parallel x \parallel = \sup_{\parallel u \parallel = 1} \mid \langle x, u \rangle \mid = \max_{\parallel u \parallel = 1} \mid \langle x, u\rangle \mid$
       \item[(c)] (三角不等式) $\parallel x + y \parallel \leq \parallel x\parallel + \parallel y \parallel$ 等号成立 $\Leftrightarrow x, y$の一方が他方の非負実数倍
     \end{itemize}
+  \paragraph{補題 3.1}
+  $(X, \langle \bullet,\bullet \rangle)$: 内積空間 
+  \begin{itemize}
+    \item[(a)] 内積の連続性 \\
+      ${(x_n)}_{n=1}^\infty , {(y_n)}_{n=1}^\infty$: $X$の点列 \\
+      $x, y \in X$ このとき \\
+      $x_n \rightarrow x, y_n \rightarrow y \Rightarrow \langle x_n, y_n \rangle \rightarrow \langle x, y \rangle $
+    \item[(b)] $S \subset X$に対して \\
+      $S^\perp = \lbrace x \in X \mid x \perp y \ {}^\forall y \in S \rbrace $
+      は閉部分空間
+    \end{itemize}
   
+  \paragraph{性質 3.3 (a)}
+    内積空間$X$において \\
+    \[ \parallel x + y \parallel^2 + \parallel x - y \parallel^2 = 2(\parallel x \parallel^2 + \parallel y \parallel^2) \]
+    ただし$\parallel\bullet\parallel$は内積から誘導されたノルム
+
+  \paragraph{Jordan-Neumannの定理}
+    \begin{itemize}
+      \item[(1)] 実ノルム空間$(X, \parallel\bullet\parallel)$において中線定理がせいりつしているならば \\
+        $\langle\bullet,\bullet\rangle: X \rightarrow \mathbf{R}$を$\langle x, y \rangle = \frac14 ( \parallel x + y \parallel^2 - \parallel x - y \parallel^2 )$で定義すると \\
+        $(X, \langle\bullet,\bullet\rangle)$は実内積空間となり、$\parallel\bullet\parallel$はこの内積から誘導されたノルムとなる
+    \end{itemize}
   
 \end{document}
