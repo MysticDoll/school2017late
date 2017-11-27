@@ -238,4 +238,64 @@
   各$X_i$の最小多項式を$h_1(X_1), \ldots , h_l (X_l)$とおく \\
   このとき
   \[ \sqrt{I} = I + \langle h_1, \ldots, h_l \rangle \]
+\section*{5章 項順序}
+\subsection*{定義 5.1 順序}
+  集合$S$上の2項関係$>$は
+  \begin{itemize}
+    \item[1.] $a > b, b > c \Rightarrow a > c$
+    \item[2.] $a \not{>} a$
+  \end{itemize}
+  をみたすとき順序と呼ばれる。 \\
+
+  $a \geq b $を $a > b$または$a = b$とすると、$>$が順序であることは
+  \begin{itemize}
+    \item[$1^\prime$.] $a \geq b, b \geq c \Rightarrow a \geq c$
+    \item[$2^\prime$.] $a \geq b , b \geq a \Rightarrow a = b$
+  \end{itemize}
+  が成り立つことにほかならない \\
+  $\geq$が$1^\prime, 2^\prime$を満たすとき、$a > b$を$a \geq b $かつ$a \neq b$とすると$>$は1,2をみたす
+
+  さらに$>$が
+  \begin{itemize}
+    \item[3.] ${}^\forall a,b \in S \ (a \neq b) \\ a > b \text{または} b > a$
+  \end{itemize}
+  が成り立つとき全順序と呼ばれる。
+
+  変数$X_1, \ldots, X_n$の項とは$X_1^{a_1} , \ldots , X_n^{a_n}$ $a_i$は$0$以上の整数のこと \\
+  $X_1^{a_1} X_2^{a_2} \ldots X_n^{a_n}$と$X_1^{b_1} X_2^{b_2} \ldots X_n^{b_n}$の間に
+  $ X_1^{a_1} X_2^{a_2} \ldots X_n^{a_n} \geq X_1^{b_1} X_2^{b_2} \ldots X_n^{b_n} \\
+    \overset{\text{def}}{\Leftrightarrow} \\
+    a_1 \geq b_1 \wedge a_2 \geq b_2 \wedge \cdots \wedge a_n \geq b_n \\
+  (\Leftrightarrow X_1^{b_1} \ldots X_n^{b_n} \text{が} X_1^{a_1} \ldots X_n^{a_n} \text{を割り切る}) $
+
+  で$\geq$を定めると$\geq$は順序。 $n \geq 2$の場合h全順序にはならない
+
+\subsection*{定義 5.2}
+  集合$S$上の順序$>$が
+  \begin{itemize}
+    \item[(1)] $S$の空でない任意の部分集合$A$が極小値をもつ
+    \item[(2)] $S$の空でない任意の部分集合$A$が最小値をもつ
+    \item[(3)] $S$の空でない部分集合$A$の極小値全体の集合は空でない有限集合になる。
+  \end{itemize}
+  を満たすとき
+  \begin{itemize}
+    \item[(1)] well-founded
+    \item[(2)] well-ordered (整列順序)
+    \item[(3)] semi-well-ordered
+  \end{itemize}
+  と呼ぶ
+\subsection*{定義 5.3}
+  変数$X_1, \ldots ,X_n$の項全体の集合を$S$とする。 \\
+  $S$上の全順序$>$が以下の性質ｗみたすとき$>$を項順序と呼ぶ。
+
+  \begin{itemize}
+    \item[1.] $X_1^{a_1} \ldots X_n^{a_n} > X_1^{b_1} \ldots X_n^{b_n} \Rightarrow X_1^{a_1 + c_1} \ldots X_n^{a_n + c_n} > X_1^{b_1 + c_1} \ldots X_n^{b_n + c_n} \\
+      {}^\forall a_1,\ldots,a_n,b_1,\ldots,b_n,c_1,\ldots,c_n \in \mathbf{N} \cup \lbrace 0 \rbrace$
+    \item[2.] $X_1^{a_1} \ldots X_n^{a_n} \geq 1$
+  \end{itemize}
+
+\subsection*{補題 5.1}
+  $>$を無限集合$S$上のsemi-well-orderとするとき \\
+  $S$の任意の無限部分集合$A$に対し \\
+  $A$の要素からなる単調増加列 $ \alpha_1 < \alpha_2 < \cdots$が存在する
 \end{document}
