@@ -274,8 +274,9 @@
         $\langle x, y \rangle = \frac 14 ( \parallel x + y \parallel^2 - \parallel x - y \parallel^2 )$ \\
         により写像$\langle \bullet,\bullet \rangle : X^2 \rightarrow \mathbf{R}$を定義すると \\
         $\langle\bullet,\bullet\rangle$は$X$上の内積であり、$\parallel\bullet\parallel$は$\langle\bullet,\bullet\rangle$から誘導されたノルムである。
-      \item[(2)] 複素ノルム空間$(X, \parallel\bullet\parallel)$のノルムが中線定理を満たすとき \\
-        $\langle x, y \rangle = \frac 14 (\parallel x + y \parallel^2 - \parallel x - y \parallel )$
+      \item[(2)] 複素ノルム空間$(X, \parallel\bullet\parallel)$のノルム$\parallel\bullet\parallel$が中線定理を満たすとき \\
+        $\langle x, y \rangle = \frac 14 (\parallel x + y \parallel^2 - \parallel x - y \parallel + i \parallel x + i y \parallel^2 - i \parallel x - i y \parallel^2)$ \\
+        を定義すると$\langle \bullet,\bullet\rangle$は内積の公理を満たし、$\parallel x \parallel = \sqrt{\langle x, x \rangle} \ {}^\forall x \in X$ を満たす
     \end{itemize}
   
   \paragraph{補題 3.2}
@@ -284,4 +285,29 @@
     をみたすとき$f$は定数$c \in \mathbf{R}$を用いて \\
     $f(t) = ct \ (t \in \mathbf{R}) $ \\
     と表せる
+  
+  \paragraph{定義 3.7}
+    \begin{itemize}
+      \item[(a)] $u \subseteq X$について
+        \begin{itemize}
+          \item $u$が直交系$\Leftrightarrow$ $0 \not{\in} u$かつ$x,y \in u, \ x \neq y \Rightarrow x \perp y$
+          \item $u$が正規直交系$\Leftrightarrow$A $u$は直交系かつ任意の$x \in u$に対して$\parallel x \parallel = 1$
+        \end{itemize}
+      \item[(b)] $u \in X$について
+        \begin{itemize}
+          \item $u$が極大 $\Leftrightarrow$ 順序集合$(s^X, \subseteq)$において、$u$は極大 \\
+            $\Leftrightarrow$ $u \subsetneq u^\prime$なる直交系$u^\prime$が存在しない \\
+            $\Leftrightarrow$ 任意の$v \in X \backslash u$に対して$u \cup \lbrace v \rbrace$は直交系でない
+        \end{itemize}
+    \end{itemize}
+
+  \paragraph{性質 3.4}
+    $X$を内積空間とする
+    \begin{itemize}
+      \item[(a)] $v \subseteq X$について$v$が直交系$\Rightarrow$ $v$は線形独立 
+      \item[(b)] Gram-Schmidtの直交化法
+      \item[(c)] Besselの不等式 \\
+        正規直交系$\lbrace u_j \rbrace_{j=1}^\infty$が与えられるとき \\
+        任意の$x \in X$に対して $\sum_{j=1}^\infty \mid \langle x, u_j \rangle \mid^2 \leq \parallel x \parallel^2$
+    \end{itemize}
 \end{document}
