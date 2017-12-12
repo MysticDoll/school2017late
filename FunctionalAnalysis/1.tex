@@ -310,4 +310,40 @@
         正規直交系$\lbrace u_j \rbrace_{j=1}^\infty$が与えられるとき \\
         任意の$x \in X$に対して $\sum_{j=1}^\infty \mid \langle x, u_j \rangle \mid^2 \leq \parallel x \parallel^2$
     \end{itemize}
+
+  \subsection{ノルム空間の有界線形作用素}
+    \paragraph{定義 3.8}
+      $(X, \parallel \bullet\parallel_X), (Y, \parallel\bullet\parallel_Y)$ ノルム空間 \\
+      \begin{itemize}
+        \item[(a)] 線形写像$A : X \rightarrow Y$について、 \\
+          $A$は有界 $\Leftrightarrow$ 「任意の$x \in X$に対して \\
+            $\parallel A(x) \parallel_Y \leq K \parallel x \parallel_X$ \\
+          を満たすような$K \geq 0$が存在」 \\
+          有界な線形写像を 有界線形作用素という \\
+          $X$から$Y$への有界線形作用素全体の集合を \\
+          $B(X, Y)$と表す。特に$B(X, X)$は$B(X)$と表す
+        \item[(b)] 有界線形作用素 $A : X \rightarrow Y$に対して \\
+          $\parallel A \parallel = \inf \lbrace K \geq 0 \mid \parallel A(x) \parallel_Y \leq K \parallel x \parallel_X \ {}^\forall x \in X \rbrace \\
+          = \underset{x \neq 0}{\sup} \frac{\parallel A(x) \parallel_Y}{\parallel x \parallel_X}
+          = \underset{x \neq 0}{\sup}\parallel \frac{1}{\parallel x \parallel_X} A(x) \parallel_Y = \underset{x \neq 0}{\sup}\parallel A (\frac{1}{\parallel x \parallel_X} x) \parallel_Y \\
+          = \underset{\parallel x \parallel_X = 1}{\sup} \parallel A(x) \parallel_Y = \underset{x \leq 1}{\sup} \parallel A (x) \parallel_Y$ \\
+          を作用素ノルムと呼ぶ。
+        \item[(c)] $X$から$\mathbf{R}$への有界線形写像を有界線形汎関数という。
+      \end{itemize}
+    \subparagraph{例題 3.2}
+      $(X, \parallel \bullet \parallel_X), (Y, \parallel \bullet \parallel_Y), (Z, \parallel \bullet \parallel_Z)$: ノルム空間\\
+      $A_1 : Y \rightarrow Z$ 有界線形作用素 \\
+      $A_2 : X \rightarrow Y$ 有界線形作用素 \\
+      このとき$A_1, A_2$の合成 \\
+      $A_1 A_2 (x): X \rightarrow Z$は$X$から$Z$への有界線形作用素で \\
+      $\parallel A_1 A_2 \parallel \leq \parallel A_1 \parallel \parallel A_2 \parallel $ \\
+      (作用素ノルムの劣乗法性)
+
+    \paragraph{定理 3.4}
+      $(X, \parallel \bullet\parallel_X), (Y, \parallel \bullet\parallel_Y)$: ノルム空間 \\
+      $A : X \rightarrow Y$: 線形作用素 \\
+      このとき、$A$は連続 $\Leftrightarrow$ $A$ は有界
+
+    \paragraph{定理 3.5}
+      有界線形写像の逆写像はまた線形写像となる
 \end{document}
