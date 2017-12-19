@@ -346,4 +346,34 @@
 
     \paragraph{定理 3.5}
       有界線形写像の逆写像はまた線形写像となる
+
+    \paragraph{定理 3.6}
+      $(X, \parallel\bullet\parallel_X), (Y, \parallel\bullet\parallel_Y)$: ノルム空間 \\
+      $B(X, Y)$ $X$から$Y$への有界線形作用素全体の集合 \\
+      このとき$A_1, A_2 \in B(X, Y), \ \alpha \in \mathbf{R}$に対して \\
+      $A_1 + A_2, \alpha A_1$を \\
+      $(A_1 + A_2) (x) = A_1 (x) + A_2 (x) \\
+      (\alpha X_1)(x) = \alpha (A_1 (x)) $により定義される$X$から$Y$への写像とすると \\
+      $B(X, Y)$はこれらの演算に関して線形空間をなし、作用素ノルム$\parallel\bullet\parallel$は$B(X, Y)$上のノルムである
+
+  \subsection{行列とベクトルのノルム}
+    \paragraph{定理 3.7}
+    $(A=a_{jk})$ $m\times n$行列 \\
+    $X = \mathbf{R}^n, Y= \mathbf{R}^m$ \\
+    ここで、写像$T : X \rightarrow Y$を$T(\mathbf{x}) = A \mathbf{x} \ (\mathbf{X} \in \mathbf{R}^m)$と定めると、$T$は線形となる \\
+
+    \begin{itemize}
+      \item[(a)] ノルム空間$(X, \parallel\bullet\parallel_2), (Y, \parallel\bullet\parallel_2)$に対して$T$は有界
+      \item[(b)] $X, Y$に定義されるいかなるノルムに対しても$T$は有界
+    \end{itemize}
+
+    \subparagraph{例題 3.3}
+      $m\times n$行列$A= (a_{jk})$に対して、$A$によって定義される$\mathbf{R}^n$から$\mathbf{R}^m$への線形作用素のノルムについて
+
+      \begin{itemize}
+        \item[(a)] $\mathbf{R}^n, \mathbf{R}^m$のノルムをともに$\parallel\bullet\parallel_1$とするとき、 \\
+          $\parallel A \parallel_1 = \underset{k}{\max} \underset{j=1}{\overset{m}{\sum}}\mid a_{jk} \mid$
+        \item[(b)] $\mathbf{R}^n, \mathbf{R}^m$のノルムをともに$\parallel\bullet\parallel_\infty$とするとき \\
+          $\parallel A \parallel_\infty = \underset{j}{\max} \underset{k=1}{\overset{n}{\sum}} \mid a_{jk} \mid$
+      \end{itemize}
 \end{document}
